@@ -7,4 +7,4 @@
 - [x] LICENSE, NOTICE, third-party notices, provenance, and citation metadata were reviewed.
 - [x] No native library, APK/AAB/AAR, symbol archive, paper PDF, or measurement is attached to the local candidate.
 - [x] Documentation does not claim that this source release contains the Chorus transport core or server.
-- [ ] A maintainer explicitly approves publication after reviewing all scanner dispositions.
+- [x] A maintainer explicitly approved publication after reviewing all scanner dispositions (2026-07-14).

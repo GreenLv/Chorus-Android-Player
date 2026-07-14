@@ -4,7 +4,10 @@ Audit date: 2026-07-14
 
 Audited root commit: `b26a4a2`
 
-Publication state: local candidate only; no GitHub repository or release was created.
+Publication state at audit time: local candidate only; no GitHub repository or release was created.
+
+Maintainer disposition: approved for public source publication on 2026-07-14 after
+review of the automated evidence and deliberately unverified items below.
 
 ## Included boundary
 
@@ -37,4 +40,4 @@ The clean-clone build used Temurin JDK 17, Android SDK Platform 35, Android Buil
 - No physical-device playback, WiFi/cellular binding, network-switching, or Activity lifecycle instrumentation run was performed in this environment.
 - GitHub Actions, the hosted gitleaks action, GitHub license detection, and repository protection settings cannot run until a remote repository exists.
 
-These are release-scope limitations, not claims of successful full-system reproduction. Public publication remains gated on an explicit maintainer decision after reviewing this candidate.
+These are release-scope limitations, not claims of successful full-system reproduction. Public publication was authorized by the maintainer after reviewing this candidate.
