@@ -7,12 +7,11 @@ import org.junit.Test;
 
 public class TransportAlgorithmTest {
     @Test
-    public void nativeIdsRemainStable() {
-        assertEquals(TransportAlgorithm.CHORUS, TransportAlgorithm.fromNativeId(0));
-        assertEquals(TransportAlgorithm.XLINK, TransportAlgorithm.fromNativeId(1));
-        assertEquals(TransportAlgorithm.MIN_RTT_RI, TransportAlgorithm.fromNativeId(2));
-        assertEquals(TransportAlgorithm.MIN_RTT, TransportAlgorithm.fromNativeId(3));
-        assertEquals(TransportAlgorithm.SP, TransportAlgorithm.fromNativeId(4));
-        assertEquals("MinRTTRI", TransportAlgorithm.MIN_RTT_RI.slug());
+    public void usesPaperFacingDisplayNames() {
+        assertEquals("Chorus", TransportAlgorithm.CHORUS.displayName());
+        assertEquals("XLINK", TransportAlgorithm.XLINK.displayName());
+        assertEquals("MinRTT+RI", TransportAlgorithm.MIN_RTT_RI.displayName());
+        assertEquals("MinRTT", TransportAlgorithm.MIN_RTT.displayName());
+        assertEquals("SP", TransportAlgorithm.SP.displayName());
     }
 }

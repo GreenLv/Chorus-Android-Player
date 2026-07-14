@@ -6,42 +6,21 @@
  */
 package org.chorusresearch.player.transport;
 
-/** Public paper names with stable legacy native identifiers. */
+/** Algorithm names used in the paper and public transport API. */
 public enum TransportAlgorithm {
-    CHORUS(0, "Chorus", "Chorus"),
-    XLINK(1, "XLINK", "XLINK"),
-    MIN_RTT_RI(2, "MinRTT+RI", "MinRTTRI"),
-    MIN_RTT(3, "MinRTT", "MinRTT"),
-    SP(4, "SP", "SP");
+    CHORUS("Chorus"),
+    XLINK("XLINK"),
+    MIN_RTT_RI("MinRTT+RI"),
+    MIN_RTT("MinRTT"),
+    SP("SP");
 
-    private final int nativeId;
     private final String displayName;
-    private final String slug;
 
-    TransportAlgorithm(int nativeId, String displayName, String slug) {
-        this.nativeId = nativeId;
+    TransportAlgorithm(String displayName) {
         this.displayName = displayName;
-        this.slug = slug;
-    }
-
-    public int nativeId() {
-        return nativeId;
     }
 
     public String displayName() {
         return displayName;
-    }
-
-    public String slug() {
-        return slug;
-    }
-
-    public static TransportAlgorithm fromNativeId(int nativeId) {
-        for (TransportAlgorithm algorithm : values()) {
-            if (algorithm.nativeId == nativeId) {
-                return algorithm;
-            }
-        }
-        throw new IllegalArgumentException("unknown transport algorithm id: " + nativeId);
     }
 }
