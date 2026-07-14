@@ -12,7 +12,7 @@ local-native-libs/
 
 Placing a file there does not integrate it automatically. An adapter module must implement `TransportClient`, declare API version 1, and truthfully report HTTP/3, multipath, client-QoE, and server-QoE capabilities. Before starting Chorus mode, call `TransportCapabilities.requireChorus()` and fail fast if any capability is absent.
 
-Stable public algorithm IDs are 0 through 4 as listed in `ALGORITHM_MAPPING.md`. Media-segment chunk indexes are zero-based and expected delivery time uses milliseconds. Server statistics use Mbps, milliseconds, a fast-path ratio in `[0,1]`, and an elapsed-realtime receive timestamp so freshness does not depend on wall-clock changes.
+Media-segment chunk indexes are zero-based and expected delivery time uses milliseconds. Server statistics use Mbps, milliseconds, a fast-path ratio in `[0,1]`, and an elapsed-realtime receive timestamp so freshness does not depend on wall-clock changes.
 
 An adapter must enforce this event order:
 

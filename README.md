@@ -23,7 +23,7 @@ Install the generated debug APK on a test device, enter a complete HTTPS URL end
 - `transport-http`: HTTPS compatibility provider without Chorus capabilities.
 - `transport-stub`: deterministic missing-provider behavior for tests and integration work.
 
-See [Architecture](docs/ARCHITECTURE.md), [Building](docs/BUILDING.md), and [Native provider integration](docs/NATIVE_LIBRARY.md). The public API names map to stable legacy native values as documented in [Algorithm mapping](docs/ALGORITHM_MAPPING.md). The latest local verification evidence and explicit gaps are recorded in the [source-release audit](docs/RELEASE_AUDIT.md).
+See [Architecture](docs/ARCHITECTURE.md), [Building](docs/BUILDING.md), and [Native provider integration](docs/NATIVE_LIBRARY.md). The latest local verification evidence and explicit gaps are recorded in the [source-release audit](docs/RELEASE_AUDIT.md).
 
 ## Scope and limitations
 
@@ -35,9 +35,27 @@ This release has no tracked native provider and therefore has no `xquicDebug` bu
 
 - Paper: [ACM Digital Library, DOI 10.1145/3636534.3649359](https://doi.org/10.1145/3636534.3649359)
 - Public research artifacts: [GreenLv/Chorus](https://github.com/GreenLv/Chorus)
-- Citation metadata: [`CITATION.cff`](CITATION.cff)
+- Demo Video: [Chorus_demo_video.mp4](https://greenlv.github.io/files/2024_MobiCom_Chorus_demo_video.mp4) 
+- Slides: [Chorus_slides.pdf](https://greenlv.github.io/files/2024_MobiCom_Chorus_slides.pdf)
+- Tech Report: [Chorus_tech_report.pdf](https://greenlv.github.io/files/2024_MobiCom_Chorus_tech_report.pdf) 
+- GetMobile Highlights: [ACM Digital Library, DOI 10.1145/3733892.3733900](https://dl.acm.org/doi/10.1145/3733892.3733900)
 
-The paper PDF and technical report are linked, not redistributed, by this repository.
+## Citation
+
+If you use this dataset in your research, please cite:
+
+```bibtex
+@inproceedings{lv2024chorus,
+  title={Chorus: Coordinating Mobile Multipath Scheduling and Adaptive Video Streaming},
+  author={Lv, Gerui and Wu, Qinghua and Liu, Yanmei and Li, Zhenyu and Tan, Qingyue and Yang, Furong and Chen, Wentao and Ma, Yunfei and Guo, Hongyu and Chen, Ying and Xie, Gaogang},
+  booktitle={Proceedings of the 30th Annual International Conference on Mobile Computing and Networking (MobiCom '24)},
+  pages={246--262},
+  year={2024},
+  publisher={ACM},
+  address={New York, NY, USA},
+  doi={10.1145/3636534.3649359}
+}
+```
 
 ## License and attribution
 
