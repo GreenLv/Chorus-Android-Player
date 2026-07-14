@@ -23,7 +23,7 @@ Install the generated debug APK on a test device, enter a complete HTTPS URL end
 - `transport-http`: HTTPS compatibility provider without Chorus capabilities.
 - `transport-stub`: deterministic missing-provider behavior for tests and integration work.
 
-See [Architecture](docs/ARCHITECTURE.md), [Building](docs/BUILDING.md), and [Native provider integration](docs/NATIVE_LIBRARY.md). The latest local verification evidence and explicit gaps are recorded in the [source-release audit](docs/RELEASE_AUDIT.md).
+See [Architecture](docs/ARCHITECTURE.md), [Building](docs/BUILDING.md), and [Native provider integration](docs/NATIVE_LIBRARY.md).
 
 ## Scope and limitations
 
@@ -31,18 +31,18 @@ The source tree can build and exercise the public player path without any propri
 
 This release has no tracked native provider and therefore has no `xquicDebug` build variant. The public contract is intentionally Java-only until a redistributable provider can be audited. Never place a private library inside a commit; use the ignored `local-native-libs/` layout described in the integration guide.
 
-## Paper and data
+## Paper and related resources
 
 - Paper: [ACM Digital Library, DOI 10.1145/3636534.3649359](https://doi.org/10.1145/3636534.3649359)
 - Public research artifacts: [GreenLv/Chorus](https://github.com/GreenLv/Chorus)
-- Demo Video: [Chorus_demo_video.mp4](https://greenlv.github.io/files/2024_MobiCom_Chorus_demo_video.mp4) 
+- Demo Video: [Chorus_demo_video.mp4](https://greenlv.github.io/files/2024_MobiCom_Chorus_demo_video.mp4)
 - Slides: [Chorus_slides.pdf](https://greenlv.github.io/files/2024_MobiCom_Chorus_slides.pdf)
-- Tech Report: [Chorus_tech_report.pdf](https://greenlv.github.io/files/2024_MobiCom_Chorus_tech_report.pdf) 
+- Tech Report: [Chorus_tech_report.pdf](https://greenlv.github.io/files/2024_MobiCom_Chorus_tech_report.pdf)
 - GetMobile Highlights: [ACM Digital Library, DOI 10.1145/3733892.3733900](https://dl.acm.org/doi/10.1145/3733892.3733900)
 
 ## Citation
 
-If you use this dataset in your research, please cite:
+If you use this player in your research, please cite:
 
 ```bibtex
 @inproceedings{lv2024chorus,
@@ -59,7 +59,7 @@ If you use this dataset in your research, please cite:
 
 ## License and attribution
 
-New project code is Copyright 2026 Gerui Lv and Qingyue Tan and is licensed under Apache-2.0. Upstream source files retain their original copyright notices. See [`NOTICE`](NOTICE), [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md), [`docs/PROVENANCE.md`](docs/PROVENANCE.md), and the source-level [`SPDX SBOM`](docs/SBOM.spdx.json).
+New project code is Copyright 2026 Gerui Lv and Qingyue Tan and is licensed under Apache-2.0. Upstream source files retain their original copyright notices. See [`NOTICE`](NOTICE) and [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md).
 
 ## Privacy when reporting issues
 
