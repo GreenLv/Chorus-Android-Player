@@ -1,0 +1,3 @@
+# Copy to player.properties for local tooling only; the file is ignored by Git.
+# Runtime UI input takes precedence. Keep the example empty and never commit a private URL.
+chorusMpdUrl=

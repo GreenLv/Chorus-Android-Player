@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Chorus Android Player</string>
+    <string name="project_title">Chorus Android Player</string>
+    <string name="transport_notice">Compatibility build: generic HTTPS DASH with HM fallback. Chorus transport core is not included.</string>
+    <string name="mpd_url_hint">https://example.invalid/path/manifest.mpd</string>
+    <string name="play">Play</string>
+    <string name="stop">Stop</string>
+    <string name="status_ready">Enter a complete HTTPS MPD URL.</string>
+    <string name="status_loading">Loading manifest…</string>
+    <string name="status_playing">Playback initialized.</string>
+    <string name="status_stopped">Playback stopped.</string>
+    <string name="status_playback_failed">Playback failed. See the redacted log for details.</string>
+    <string name="status_load_failed">Unable to load the MPD.</string>
+</resources>

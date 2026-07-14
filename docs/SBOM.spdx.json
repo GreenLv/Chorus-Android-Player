@@ -1,0 +1,105 @@
+{
+  "spdxVersion": "SPDX-2.3",
+  "dataLicense": "CC0-1.0",
+  "SPDXID": "SPDXRef-DOCUMENT",
+  "name": "Chorus-Android-Player-0.1.0-source",
+  "documentNamespace": "https://github.com/GreenLv/Chorus-Android-Player/sbom/0.1.0",
+  "creationInfo": {
+    "created": "2026-07-14T08:31:21Z",
+    "creators": [
+      "Person: Gerui Lv",
+      "Person: Qingyue Tan",
+      "Tool: manual-source-audit"
+    ]
+  },
+  "documentDescribes": ["SPDXRef-ChorusAndroidPlayer"],
+  "packages": [
+    {
+      "name": "Chorus Android Player",
+      "SPDXID": "SPDXRef-ChorusAndroidPlayer",
+      "versionInfo": "0.1.0",
+      "downloadLocation": "https://github.com/GreenLv/Chorus-Android-Player",
+      "filesAnalyzed": false,
+      "licenseConcluded": "Apache-2.0",
+      "licenseDeclared": "Apache-2.0",
+      "copyrightText": "Copyright 2026 Gerui Lv and Qingyue Tan"
+    },
+    {
+      "name": "MediaPlayer-Extended",
+      "SPDXID": "SPDXRef-MediaPlayerExtended",
+      "versionInfo": "4.4.1",
+      "downloadLocation": "https://github.com/protyposis/MediaPlayer-Extended/releases/tag/v4.4.1",
+      "filesAnalyzed": false,
+      "licenseConcluded": "Apache-2.0",
+      "licenseDeclared": "Apache-2.0",
+      "copyrightText": "Copyright Mario Guggenberger and MediaPlayer-Extended contributors"
+    },
+    {
+      "name": "Okio",
+      "SPDXID": "SPDXRef-Okio",
+      "versionInfo": "1.17.6",
+      "downloadLocation": "https://repo1.maven.org/maven2/com/squareup/okio/okio/1.17.6/okio-1.17.6.jar",
+      "filesAnalyzed": false,
+      "licenseConcluded": "Apache-2.0",
+      "licenseDeclared": "Apache-2.0",
+      "copyrightText": "Copyright 2014 Square, Inc.",
+      "externalRefs": [{
+        "referenceCategory": "PACKAGE-MANAGER",
+        "referenceType": "purl",
+        "referenceLocator": "pkg:maven/com.squareup.okio/okio@1.17.6"
+      }]
+    },
+    {
+      "name": "ISO Parser",
+      "SPDXID": "SPDXRef-IsoParser",
+      "versionInfo": "1.1.22",
+      "downloadLocation": "https://repo1.maven.org/maven2/com/googlecode/mp4parser/isoparser/1.1.22/isoparser-1.1.22.jar",
+      "filesAnalyzed": false,
+      "licenseConcluded": "Apache-2.0",
+      "licenseDeclared": "Apache-2.0",
+      "copyrightText": "See player-dash/LICENSE_ISOPARSER",
+      "externalRefs": [{
+        "referenceCategory": "PACKAGE-MANAGER",
+        "referenceType": "purl",
+        "referenceLocator": "pkg:maven/com.googlecode.mp4parser/isoparser@1.1.22"
+      }]
+    },
+    {
+      "name": "JUnit",
+      "SPDXID": "SPDXRef-JUnit",
+      "versionInfo": "4.13.2",
+      "downloadLocation": "https://repo1.maven.org/maven2/junit/junit/4.13.2/junit-4.13.2.jar",
+      "filesAnalyzed": false,
+      "licenseConcluded": "EPL-1.0",
+      "licenseDeclared": "EPL-1.0",
+      "copyrightText": "Copyright JUnit contributors",
+      "externalRefs": [{
+        "referenceCategory": "PACKAGE-MANAGER",
+        "referenceType": "purl",
+        "referenceLocator": "pkg:maven/junit/junit@4.13.2"
+      }]
+    },
+    {
+      "name": "desugar_jdk_libs",
+      "SPDXID": "SPDXRef-DesugarJdkLibs",
+      "versionInfo": "2.1.5",
+      "downloadLocation": "https://repo1.maven.org/maven2/com/android/tools/desugar_jdk_libs/2.1.5/desugar_jdk_libs-2.1.5.jar",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "externalRefs": [{
+        "referenceCategory": "PACKAGE-MANAGER",
+        "referenceType": "purl",
+        "referenceLocator": "pkg:maven/com.android.tools/desugar_jdk_libs@2.1.5"
+      }]
+    }
+  ],
+  "relationships": [
+    {"spdxElementId": "SPDXRef-ChorusAndroidPlayer", "relationshipType": "CONTAINS", "relatedSpdxElement": "SPDXRef-MediaPlayerExtended"},
+    {"spdxElementId": "SPDXRef-ChorusAndroidPlayer", "relationshipType": "DEPENDS_ON", "relatedSpdxElement": "SPDXRef-Okio"},
+    {"spdxElementId": "SPDXRef-ChorusAndroidPlayer", "relationshipType": "DEPENDS_ON", "relatedSpdxElement": "SPDXRef-IsoParser"},
+    {"spdxElementId": "SPDXRef-ChorusAndroidPlayer", "relationshipType": "DEPENDS_ON", "relatedSpdxElement": "SPDXRef-JUnit", "comment": "Test scope only"},
+    {"spdxElementId": "SPDXRef-ChorusAndroidPlayer", "relationshipType": "DEPENDS_ON", "relatedSpdxElement": "SPDXRef-DesugarJdkLibs", "comment": "Build-time Android desugaring"}
+  ]
+}

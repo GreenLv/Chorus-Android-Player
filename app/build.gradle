@@ -1,0 +1,66 @@
+import groovy.json.JsonOutput
+
+plugins {
+    id 'com.android.application'
+}
+
+def defaultMpdUrl = providers.gradleProperty('chorusMpdUrl').orElse('').get()
+
+android {
+    namespace 'org.chorusresearch.player'
+    compileSdk 35
+    buildToolsVersion '35.0.0'
+
+    defaultConfig {
+        applicationId 'org.chorusresearch.player'
+        minSdk 24
+        targetSdk 35
+        versionCode 1
+        versionName '0.1.0'
+        buildConfigField 'String', 'DEFAULT_MPD_URL', JsonOutput.toJson(defaultMpdUrl)
+    }
+
+    flavorDimensions += 'transport'
+    productFlavors {
+        stub {
+            dimension 'transport'
+            applicationIdSuffix '.stub'
+            versionNameSuffix '-stub'
+            buildConfigField 'String', 'TRANSPORT_MODE', '"HTTP compatibility (no Chorus core)"'
+        }
+    }
+
+    buildTypes {
+        debug {
+            applicationIdSuffix '.debug'
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'),
+                    'proguard-rules.pro'
+        }
+    }
+
+    buildFeatures {
+        buildConfig true
+    }
+
+    compileOptions {
+        coreLibraryDesugaringEnabled true
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
+}
+
+dependencies {
+    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:2.1.5'
+    implementation project(':player-core')
+    implementation project(':player-dash')
+    implementation project(':transport-api')
+    implementation project(':transport-http')
+    testImplementation 'junit:junit:4.13.2'
+}

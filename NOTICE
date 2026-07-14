@@ -1,0 +1,12 @@
+Chorus Android Player
+Copyright 2026 Gerui Lv and Qingyue Tan
+
+This product includes software developed by Mario Guggenberger and contributors
+to MediaPlayer-Extended, licensed under the Apache License, Version 2.0.
+
+This product depends on Okio, Copyright 2014 Square, Inc., and ISO Parser code
+credited in player-dash/LICENSE_ISOPARSER. Those dependencies are licensed under
+the Apache License, Version 2.0.
+
+No TekiXquic source, modified XQUIC source, JNI glue, or precompiled XQUIC
+library is included in this distribution.

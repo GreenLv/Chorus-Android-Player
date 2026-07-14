@@ -1,0 +1,43 @@
+cff-version: 1.2.0
+message: "If you use this player, please cite the Chorus paper."
+title: "Chorus Android Player"
+type: software
+authors:
+  - family-names: Lv
+    given-names: Gerui
+  - family-names: Tan
+    given-names: Qingyue
+version: 0.1.0
+date-released: 2026-07-14
+license: Apache-2.0
+repository-code: "https://github.com/GreenLv/Chorus-Android-Player"
+preferred-citation:
+  type: conference-paper
+  title: "Chorus: Coordinating Mobile Multipath Scheduling and Adaptive Video Streaming"
+  authors:
+    - family-names: Lv
+      given-names: Gerui
+    - family-names: Wu
+      given-names: Qinghua
+    - family-names: Liu
+      given-names: Yanmei
+    - family-names: Li
+      given-names: Zhenyu
+    - family-names: Tan
+      given-names: Qingyue
+    - family-names: Yang
+      given-names: Furong
+    - family-names: Chen
+      given-names: Wentao
+    - family-names: Ma
+      given-names: Yunfei
+    - family-names: Guo
+      given-names: Hongyu
+    - family-names: Chen
+      given-names: Ying
+    - family-names: Xie
+      given-names: Gaogang
+  year: 2024
+  conference:
+    name: "ACM MobiCom '24"
+  doi: 10.1145/3636534.3649359
