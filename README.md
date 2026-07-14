@@ -23,7 +23,7 @@ Install the generated debug APK on a test device, enter a complete HTTPS URL end
 - `transport-http`: HTTPS compatibility provider without Chorus capabilities.
 - `transport-stub`: deterministic missing-provider behavior for tests and integration work.
 
-See [Architecture](docs/ARCHITECTURE.md), [Building](docs/BUILDING.md), and [Native provider integration](docs/NATIVE_LIBRARY.md). The public API names map to stable legacy native values as documented in [Algorithm mapping](docs/ALGORITHM_MAPPING.md).
+See [Architecture](docs/ARCHITECTURE.md), [Building](docs/BUILDING.md), and [Native provider integration](docs/NATIVE_LIBRARY.md). The public API names map to stable legacy native values as documented in [Algorithm mapping](docs/ALGORITHM_MAPPING.md). The latest local verification evidence and explicit gaps are recorded in the [source-release audit](docs/RELEASE_AUDIT.md).
 
 ## Scope and limitations
 

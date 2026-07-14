@@ -1,5 +1,7 @@
 # Parameters and deviations
 
+The same paper-emulation preset is available in machine-readable form at `config/paper-preset.properties`. It is a reference preset, not an automatic override for arbitrary MPDs.
+
 | Parameter | Paper/technical report | Public player behavior | Scope and source |
 |---|---|---|---|
 | Media chunk duration | 4 s experimental preset | read from each MPD representation | 4 s is a paper preset, not a restriction on generic playback |
