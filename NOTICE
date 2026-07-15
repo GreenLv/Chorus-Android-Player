@@ -8,5 +8,10 @@ This product depends on Okio, Copyright 2014 Square, Inc., and ISO Parser code
 credited in player-dash/LICENSE_ISOPARSER. Those dependencies are licensed under
 the Apache License, Version 2.0.
 
-No TekiXquic source, modified XQUIC source, JNI glue, or precompiled XQUIC
-library is included in this distribution.
+The transport-teki Android/JNI adapter is newly written project code informed by
+the public TekiXquic API shape and the Chorus technical report. TekiXquic 1.0.8
+declares Apache-2.0 in its published Maven POM; no upstream TekiXquic source or
+binary is copied into this distribution.
+
+No modified XQUIC source or headers, precompiled XQUIC library, SDK package, or
+server implementation is included in this distribution.

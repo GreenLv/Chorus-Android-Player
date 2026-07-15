@@ -27,5 +27,5 @@ jobs:
       - uses: gradle/actions/setup-gradle@v4
       - name: Guard source release boundary
         run: ./scripts/verify-no-private-artifacts.sh
-      - name: Test, assemble, and lint public build
-        run: ./gradlew test assembleStubDebug lintStubDebug --stacktrace
+      - name: Test, assemble, lint, and compile JNI stub
+        run: ./gradlew test assembleStubDebug lintStubDebug :transport-teki:assembleDebug --stacktrace
