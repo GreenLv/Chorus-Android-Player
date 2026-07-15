@@ -9,7 +9,6 @@ captures/
 externalNativeBuild/
 
 # Private native providers and compiled artifacts
-local-native-libs/
 private-native/
 *.so
 *.a

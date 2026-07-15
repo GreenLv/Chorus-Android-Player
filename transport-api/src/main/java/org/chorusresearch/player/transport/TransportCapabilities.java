@@ -7,6 +7,7 @@ package org.chorusresearch.player.transport;
 import java.util.Objects;
 
 public final class TransportCapabilities {
+    public static final int UNAVAILABLE_API_VERSION = 0;
     public static final int CURRENT_API_VERSION = 1;
 
     private final int apiVersion;
@@ -21,8 +22,8 @@ public final class TransportCapabilities {
             boolean multipath,
             boolean clientQoe,
             boolean serverQoe) {
-        if (apiVersion < 1) {
-            throw new IllegalArgumentException("apiVersion must be positive");
+        if (apiVersion < UNAVAILABLE_API_VERSION) {
+            throw new IllegalArgumentException("apiVersion must not be negative");
         }
         this.apiVersion = apiVersion;
         this.http3 = http3;
