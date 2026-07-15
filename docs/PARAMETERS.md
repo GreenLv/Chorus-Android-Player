@@ -1,6 +1,6 @@
 # Parameters and deviations
 
-The same paper-emulation preset is available in machine-readable form at `config/paper-preset.properties`. It is a reference preset, not an automatic override for arbitrary MPDs.
+Paper-emulation values below document the published evaluation setup; they are not an automatic override for arbitrary MPDs.
 
 | Parameter | Paper/technical report | Public player behavior | Scope and source |
 |---|---|---|---|

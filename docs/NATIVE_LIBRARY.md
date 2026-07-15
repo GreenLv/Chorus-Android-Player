@@ -1,25 +1,27 @@
-# External native provider
+# Teki/JNI provider contract
 
-No native provider, XQUIC header, JNI glue, or prebuilt library is included or downloaded by this project. The following ignored layout is reserved for users who independently possess a legally distributable compatible implementation:
+`transport-teki` is a public Android/JNI adaptation layer, not the Chorus-modified XQUIC transport. It implements the existing `TransportClient` SPI and compiles against a project-owned native stub. With that stub, API version and capability flags are zero, requests fail with a controlled provider-unavailable error, and Chorus mode cannot be selected.
 
-```text
-local-native-libs/
-├── include/
-└── jniLibs/
-    ├── arm64-v8a/libxquic.so
-    └── armeabi-v7a/libxquic.so
-```
+## Public QoE boundary
 
-Placing a file there does not integrate it automatically. An adapter module must implement `TransportClient`, declare API version 1, and truthfully report HTTP/3, multipath, client-QoE, and server-QoE capabilities. Before starting Chorus mode, call `TransportCapabilities.requireChorus()` and fail fast if any capability is absent.
+The JNI bridge contains only the client/server QoE information flow disclosed by the Chorus technical report:
 
-Media-segment chunk indexes are zero-based and expected delivery time uses milliseconds. Server statistics use Mbps, milliseconds, a fast-path ratio in `[0,1]`, and an elapsed-realtime receive timestamp so freshness does not depend on wall-clock changes.
+- Client QoE: zero-based media chunk index and expected delivery time in milliseconds.
+- Server QoE: monotonically assigned sequence number, fast/slow path indexes, per-path receive rates in Mbps, per-path RTTs in milliseconds, fast-path traffic ratio in `[0,1]`, and an Android elapsed-realtime receive timestamp in milliseconds.
+- Provider capabilities: API version 1 plus HTTP/3, multipath, client-QoE, and server-QoE flags.
 
-An adapter must enforce this event order:
+The player and provider must preserve this order:
 
 1. complete the ABR decision and expected-time calculation;
-2. send client QoE metadata for the media segment;
-3. send the HTTP request;
-4. accept asynchronous server path-statistics feedback;
+2. publish client QoE for the media segment;
+3. issue the corresponding transport request;
+4. accept asynchronous server QoE updates;
 5. return the response or a redacted error.
 
-Use `scripts/verify-native-provider.sh /path/to/provider/root ABI` for basic local layout checks. It never downloads or copies a library. Do not submit a provider or its diagnostic output to this repository unless you are authorized to redistribute it.
+`TransportCapabilities.requireChorus()` must succeed before Chorus mode is enabled. A provider with a mismatched API version or any missing capability must remain unavailable.
+
+## External backend seam
+
+An independently authorized backend can implement `transport-teki/src/main/cpp/include/chorus_teki_backend.h` and provide its own request path through `TekiBackend`. Integration must happen in a downstream/private build; this repository does not define a library-drop directory and does not auto-discover `.so` files.
+
+Do not contribute XQUIC source or headers, `libxquic.so`, AAR/APK files, SDK/build packages, generated `.cxx` trees, private endpoints, server code, or diagnostic output. The release guard rejects these classes of artifact. A detailed file-by-file provenance inventory remains in the private development repository rather than the public release.
