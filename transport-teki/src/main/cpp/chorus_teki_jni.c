@@ -29,7 +29,7 @@ static void publish_server_qoe(
     int detach = 0;
     jint state = (*g_vm)->GetEnv(g_vm, (void **) &env, JNI_VERSION_1_6);
     if (state == JNI_EDETACHED) {
-        if ((*g_vm)->AttachCurrentThread(g_vm, (void **) &env, NULL) != JNI_OK) return;
+        if ((*g_vm)->AttachCurrentThread(g_vm, &env, NULL) != JNI_OK) return;
         detach = 1;
     } else if (state != JNI_OK) {
         return;
